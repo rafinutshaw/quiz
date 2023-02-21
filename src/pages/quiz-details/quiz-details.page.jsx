@@ -8,6 +8,7 @@ import FileIcon from "../../icons/file.icon";
 import StarOutlinedIcon from "../../icons/star-outlined";
 import {
   ContentInfo,
+  IconWrapper,
   Instruction,
   InstructionsHeader,
   SectionHeader,
@@ -21,17 +22,29 @@ export default function QuizDetailsPage() {
         <ContentInfo>
           <SectionHeader>Brief explanation about this quiz</SectionHeader>
           <ListItemComponent
-            leadingIcon={<FileIcon />}
+            leadingIcon={
+              <IconWrapper>
+                <FileIcon />
+              </IconWrapper>
+            }
             title={"10 Question"}
             description={"10 point for a correct answer"}
           />
           <ListItemComponent
-            leadingIcon={<ClockIcon />}
+            leadingIcon={
+              <IconWrapper>
+                <ClockIcon />
+              </IconWrapper>
+            }
             title={"1 hour 15 min"}
             description={"Total duration of the quiz"}
           />
           <ListItemComponent
-            leadingIcon={<StarOutlinedIcon />}
+            leadingIcon={
+              <IconWrapper>
+                <StarOutlinedIcon />
+              </IconWrapper>
+            }
             title={"Win 10 star"}
             description={"Answer all questions correctly"}
           />

@@ -4,6 +4,7 @@ export const Container = styled("div", {
   display: "flex",
   justifyContent: "space-between",
   padding: 24,
+  paddingBottom: 16,
   alignItems: "center",
 });
 

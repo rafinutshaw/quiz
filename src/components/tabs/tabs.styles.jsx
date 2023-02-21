@@ -10,8 +10,8 @@ export const LabelContainer = styled("div", {
 
 export const LabelWrapper = styled("div", {
   display: "flex",
-  overflow: "inherit",
-  position: "fixed",
+  overflow: "auto",
+  position: "absolute",
   width: 327,
   backgroundColor: "var(--color-white)",
 

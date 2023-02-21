@@ -1,5 +1,9 @@
 import { styled } from "@stitches/react";
 
+export const Space = styled("div", {
+  height: 8,
+});
+
 export const PaginatorWrapper = styled("div", {
   position: "absolute",
   left: 0,
@@ -7,5 +11,5 @@ export const PaginatorWrapper = styled("div", {
   bottom: 0,
   backgroundColor: "var(--color-white)",
   zIndex: 99,
-  padding: "10px 27px 40px 27px",
+  padding: "10px 24px 40px 24px",
 });

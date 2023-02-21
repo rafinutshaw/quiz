@@ -11,16 +11,29 @@ export const ButtonElement = styled("button", {
   justifyContent: "center",
   width: "100%",
   borderRadius: 5,
-  color: "Black",
+  color: "var(--color-black)",
   position: "relative",
   borderWidth: 0,
   cursor: "pointer",
 
   variants: {
+    size: {
+      sm: {
+        minHeight: 32,
+        fontWeight: 400,
+        fontSize: 12,
+        lineHeight: "14px",
+      },
+      md: { minHeight: 50 },
+    },
     type: {
       primary: {
         background:
           "linear-gradient(122.76deg, #3550DC -35.72%, #27E9F7 172.73%)",
+        color: "var(--color-white)",
+      },
+      dark: {
+        backgroundColor: "var(--color-black)",
         color: "var(--color-white)",
       },
       outlined: {

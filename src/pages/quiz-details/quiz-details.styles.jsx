@@ -44,3 +44,7 @@ export const Instruction = styled("div", {
     borderRadius: "50%",
   },
 });
+
+export const IconWrapper = styled("div", {
+  color: "var(--color-white)",
+});

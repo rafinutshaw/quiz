@@ -47,9 +47,9 @@ export default function TabsComponent({ tabs, activeIndex, onTabChange }) {
           );
         })}
       </LabelWrapper>
-      {tabs.map((item) => {
+      {tabs.map((item, index) => {
         return (
-          <ContentWrapper active={item.active === true}>
+          <ContentWrapper active={index === activeIndex}>
             {item.content}
           </ContentWrapper>
         );

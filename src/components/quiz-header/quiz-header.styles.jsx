@@ -4,7 +4,7 @@ export const Container = styled("div", {
   padding: "16px 24px",
   display: "flex",
   alignItems: "center",
-  marginTop: 8,
+  marginTop: 16,
 });
 
 export const Title = styled("div", {

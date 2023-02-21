@@ -5,7 +5,7 @@ import PageContentComponent from "../../components/page-content/page-content.com
 import PaginatorComponent from "../../components/paginator/paginator.component";
 import QuestionComponent from "../../components/question/question.component";
 import TabsComponent from "../../components/tabs/tabs.component";
-import { PaginatorWrapper } from "./quiz.styles";
+import { PaginatorWrapper, Space } from "./quiz.styles";
 
 export default function QuizPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,6 +31,7 @@ export default function QuizPage() {
 
   return (
     <PageContentComponent>
+      <Space />
       <PageBodyComponent>
         <TabsComponent
           tabs={tabs}

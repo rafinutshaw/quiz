@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function StarGoldenIcon() {
+export default function StarGoldenIcon({ size = 22 }) {
   return (
     <svg
-      width="22"
-      height="22"
+      width={size}
+      height={size}
       viewBox="0 0 22 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
