@@ -5,29 +5,22 @@ import PageContentComponent from "../../components/page-content/page-content.com
 import PaginatorComponent from "../../components/paginator/paginator.component";
 import QuestionComponent from "../../components/question/question.component";
 import TabsComponent from "../../components/tabs/tabs.component";
+import { questions } from "./fakedata";
 import { PaginatorWrapper, Space } from "./quiz.styles";
 
 export default function QuizPage() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const tabs = [
-    { label: "5", content: <QuestionComponent />, active: true },
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-    { label: "5", content: <QuestionComponent /> },
-  ];
+  const getTabs = () => {
+    return questions.map((item) => {
+      return {
+        label: item.id,
+        content: (
+          <QuestionComponent question={item.question} options={item.answers} />
+        ),
+      };
+    });
+  };
 
   return (
     <PageContentComponent>
@@ -35,13 +28,13 @@ export default function QuizPage() {
       <PageBodyComponent>
         <TabsComponent
           type="regular"
-          tabs={tabs}
+          tabs={getTabs()}
           activeIndex={activeIndex}
           onTabChange={setActiveIndex}
         ></TabsComponent>
         <PaginatorWrapper>
           <PaginatorComponent
-            totalPages={tabs.length}
+            totalPages={questions.length}
             currentPage={activeIndex}
             onChange={(page) => setActiveIndex(page)}
           >

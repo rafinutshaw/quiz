@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ButtonComponent from "../../components/button/button.component";
 import HomeHeaderComponent from "../../components/home-header/home-header.component";
 import OngoingQuizCardComponent from "../../components/ongoing-quiz-card/ongoing-quiz-card.component";
@@ -14,7 +15,7 @@ import {
 
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const navigate = useNavigate();
   const tabs = [
     {
       label: "5",
@@ -50,7 +51,9 @@ export default function HomePage() {
 
         <OngoingQuizCardComponent></OngoingQuizCardComponent>
         <FloatingBottomButton>
-          <ButtonComponent type={"primary"}>Start Quiz</ButtonComponent>
+          <ButtonComponent onClick={() => navigate("/quiz")} type={"primary"}>
+            Start Quiz
+          </ButtonComponent>
         </FloatingBottomButton>
       </PageBodyComponent>
     </PageContentComponent>

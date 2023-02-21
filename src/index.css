@@ -82,3 +82,7 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gray-200);
 }
+
+a {
+  text-decoration: none;
+}

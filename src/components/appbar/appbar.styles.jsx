@@ -14,6 +14,10 @@ export const PageInfo = styled("div", {
   flexGrow: 1,
 });
 
+export const IconContainer = styled("div", {
+  cursor: "pointer",
+});
+
 export const TitleContainer = styled("div", {
   fontWeight: 500,
   fontSize: 18,

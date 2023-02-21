@@ -5,8 +5,6 @@ export const Container = styled("div", {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: 40,
-  width: 40,
   color: "var(--color-white)",
   fontFamily: "Ubuntu",
   fontWeight: 500,
@@ -27,20 +25,20 @@ export const Container = styled("div", {
 
     size: {
       sm: {
-        height: 32,
-        width: 32,
+        minHeight: 32,
+        minWidth: 32,
         fontSize: 16,
         lineHeight: "18px",
       },
       md: {
-        height: 40,
-        width: 40,
+        minHeight: 40,
+        minWidth: 40,
         fontSize: 18,
         lineHeight: "21px",
       },
       lg: {
-        height: 50,
-        width: 50,
+        minHeight: 50,
+        minWidth: 50,
       },
     },
   },

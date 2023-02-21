@@ -29,7 +29,7 @@ export default function TabsComponent({
 
   useEffect(() => {
     scrollLabelToView(`${tabs[activeIndex].label}${activeIndex}`);
-  }, [activeIndex]);
+  }, [tabs, activeIndex]);
 
   const getLabel = (isActive, label) => {
     if (type === "compact") {

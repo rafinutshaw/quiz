@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ClockIcon from "../../icons/clock.icon";
 import FileIcon from "../../icons/file.icon";
 import TrashIcon from "../../icons/trash.icon";
@@ -15,6 +16,8 @@ import {
 } from "./ongoing-quiz-card.styles";
 
 export default function OngoingQuizCardComponent() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <ImageContainer />
@@ -34,8 +37,12 @@ export default function OngoingQuizCardComponent() {
             <TrashIcon />
           </DeleteAction>
         </InfoWrapper>
-        <ButtonComponent type={"dark"} size={"sm"}>
-          yoyo
+        <ButtonComponent
+          onClick={() => navigate("/quiz")}
+          type={"dark"}
+          size={"sm"}
+        >
+          Continue Quiz
         </ButtonComponent>
       </RightContent>
     </Container>

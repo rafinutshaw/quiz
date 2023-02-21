@@ -8,27 +8,19 @@ import {
   QuestionWrapper,
 } from "./question.styles";
 
-export default function QuestionComponent() {
+export default function QuestionComponent({ question, options }) {
   return (
     <QuestionWrapper>
-      <QuestionLabel>What is the meaning of UI UX Design ?</QuestionLabel>
+      <QuestionLabel>{question}</QuestionLabel>
       <OptionsWrapper>
-        <OptionContainer>
-          <PointComponent color={"gray"}>A</PointComponent>
-          <OptionLabel>User Interfoce and User Experience</OptionLabel>
-        </OptionContainer>
-        <OptionContainer>
-          <PointComponent color={"gray"}>A</PointComponent>
-          <OptionLabel>User Interfoce and User Experience</OptionLabel>
-        </OptionContainer>
-        <OptionContainer>
-          <PointComponent color={"gray"}>A</PointComponent>
-          <OptionLabel>User Interfoce and User Experience</OptionLabel>
-        </OptionContainer>
-        <OptionContainer>
-          <PointComponent color={"gray"}>A</PointComponent>
-          <OptionLabel>User Interfoce and User Experience</OptionLabel>
-        </OptionContainer>
+        {options.map((item, index) => (
+          <OptionContainer>
+            <PointComponent color={"gray"}>
+              {String.fromCharCode(65 + index)}
+            </PointComponent>
+            <OptionLabel>{item.ans}</OptionLabel>
+          </OptionContainer>
+        ))}
       </OptionsWrapper>
     </QuestionWrapper>
   );

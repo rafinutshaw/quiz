@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ClockIcon from "../../icons/clock.icon";
 import FileIcon from "../../icons/file.icon";
 import StarGoldenIcon from "../../icons/star-golden.icon";
@@ -16,7 +17,9 @@ export default function QuizCardComponent({ isActive = false }) {
     <Container active={isActive}>
       <ImageContainer />
       <InfoContainer>
-        <Title>UI UX Design</Title>
+        <Link to={"/quiz-details"}>
+          <Title>UI UX Design</Title>
+        </Link>
         <InfoItem>
           <FileIcon size={16} />
           10 Questions
