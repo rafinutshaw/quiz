@@ -7,6 +7,9 @@ export const Container = styled("div", {
   alignItems: "center",
   height: 40,
   width: 40,
+  color: "var(--color-white)",
+  fontFamily: "Ubuntu",
+  fontWeight: 500,
 
   variants: {
     color: {
@@ -26,10 +29,14 @@ export const Container = styled("div", {
       sm: {
         height: 32,
         width: 32,
+        fontSize: 16,
+        lineHeight: "18px",
       },
       md: {
         height: 40,
         width: 40,
+        fontSize: 18,
+        lineHeight: "21px",
       },
       lg: {
         height: 50,

@@ -11,9 +11,9 @@ import {
   Title,
 } from "./quiz-card.styles";
 
-export default function QuizCardComponent() {
+export default function QuizCardComponent({ isActive = false }) {
   return (
-    <Container>
+    <Container active={isActive}>
       <ImageContainer />
       <InfoContainer>
         <Title>UI UX Design</Title>

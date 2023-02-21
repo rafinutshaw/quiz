@@ -34,7 +34,7 @@ export default function OngoingQuizCardComponent() {
             <TrashIcon />
           </DeleteAction>
         </InfoWrapper>
-        <ButtonComponent type={"black"} size={"sm"}>
+        <ButtonComponent type={"dark"} size={"sm"}>
           yoyo
         </ButtonComponent>
       </RightContent>

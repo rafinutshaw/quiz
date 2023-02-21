@@ -4,11 +4,17 @@ import {
   ContentWrapper,
   Divider,
   LabelContainer,
+  LabelText,
   LabelWrapper,
   PointContainer,
 } from "./tabs.styles";
 
-export default function TabsComponent({ tabs, activeIndex, onTabChange }) {
+export default function TabsComponent({
+  tabs,
+  activeIndex,
+  onTabChange,
+  type = "compact",
+}) {
   const scrollLabelToView = (elementID) => {
     const element = document.getElementById(elementID);
     if (element) {
@@ -25,6 +31,27 @@ export default function TabsComponent({ tabs, activeIndex, onTabChange }) {
     scrollLabelToView(`${tabs[activeIndex].label}${activeIndex}`);
   }, [activeIndex]);
 
+  const getLabel = (isActive, label) => {
+    if (type === "compact") {
+      return (
+        <>
+          <LabelText active={isActive}>{label}</LabelText>
+          {isActive && <Divider compact={true} active={isActive} />}
+        </>
+      );
+    }
+    return (
+      <>
+        <PointContainer active={isActive}>
+          <PointComponent color={isActive ? "primary" : "gray"} size="sm">
+            {label}
+          </PointComponent>
+        </PointContainer>
+        <Divider active={isActive} />
+      </>
+    );
+  };
+
   return (
     <>
       <LabelWrapper>
@@ -34,7 +61,8 @@ export default function TabsComponent({ tabs, activeIndex, onTabChange }) {
               id={`${item.label}${index}`}
               onClick={() => onLabelClick(`${item.label}${index}`, index)}
             >
-              <PointContainer active={index === activeIndex}>
+              {getLabel(index === activeIndex, item.label)}
+              {/* <PointContainer active={index === activeIndex}>
                 <PointComponent
                   color={index === activeIndex ? "primary" : "gray"}
                   size="sm"
@@ -42,14 +70,17 @@ export default function TabsComponent({ tabs, activeIndex, onTabChange }) {
                   {item.label}
                 </PointComponent>
               </PointContainer>
-              <Divider active={index === activeIndex} />
+              <Divider active={index === activeIndex} /> */}
             </LabelContainer>
           );
         })}
       </LabelWrapper>
       {tabs.map((item, index) => {
         return (
-          <ContentWrapper active={index === activeIndex}>
+          <ContentWrapper
+            compact={type === "compact"}
+            active={index === activeIndex}
+          >
             {item.content}
           </ContentWrapper>
         );

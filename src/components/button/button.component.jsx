@@ -4,7 +4,7 @@ import { ButtonElement } from "./button.styles";
 export default function ButtonComponent({ children, type, size = "md" }) {
   return (
     <ButtonElement type={type} size={size}>
-      {children}{" "}
+      {children}
     </ButtonElement>
   );
 }

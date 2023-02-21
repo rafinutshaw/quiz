@@ -9,6 +9,27 @@ export const Container = styled("div", {
   display: "flex",
   gap: 16,
   alignItems: "center",
+  position: "relative",
+
+  variants: {
+    active: {
+      true: {
+        "&:before": {
+          content: "",
+          position: "absolute",
+          inset: 0,
+          padding: 2,
+          borderRadius: 5,
+          background:
+            "linear-gradient(122.76deg, #3550DC -35.72%, #27E9F7 172.73%)",
+          WebkitMask:
+            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          WebkitMaskComposite: "xor",
+          MaskComposite: "exclude",
+        },
+      },
+    },
+  },
 });
 
 export const ImageContainer = styled("div", {

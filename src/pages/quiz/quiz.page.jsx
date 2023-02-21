@@ -34,6 +34,7 @@ export default function QuizPage() {
       <Space />
       <PageBodyComponent>
         <TabsComponent
+          type="regular"
           tabs={tabs}
           activeIndex={activeIndex}
           onTabChange={setActiveIndex}

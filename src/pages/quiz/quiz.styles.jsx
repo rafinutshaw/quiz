@@ -13,3 +13,7 @@ export const PaginatorWrapper = styled("div", {
   zIndex: 99,
   padding: "10px 24px 40px 24px",
 });
+
+export const PointContainer = styled("div", {
+  padding: "0 7px 14px 7px",
+});
