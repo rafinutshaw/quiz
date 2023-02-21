@@ -1,0 +1,27 @@
+:root {
+  --font-family: "Ubuntu";
+
+  --color-white: #ffffff;
+  --color-black: #333333;
+  --color-gray-200: #c7c7c7;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #e5e5e5;
+  --color-gray-600: #999999;
+}
+
+html {
+  color: var(--color-black);
+  font-family: var(--font-family);
+  font-style: "normal";
+  font-weight: 400;
+  scroll-behavior: smooth;
+  tab-size: 4;
+}
+
+body {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: inherit;
+  margin: 0;
+  word-break: break-word;
+}
