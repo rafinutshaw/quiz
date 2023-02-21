@@ -3,6 +3,9 @@ import ListItemComponent from "../../components/list-item/list-item.component";
 import PageBodyComponent from "../../components/page-body/page-body.component";
 import PageContentComponent from "../../components/page-content/page-content.component";
 import QuizHeaderComponent from "../../components/quiz-header/quiz-header.component";
+import ClockIcon from "../../icons/clock.icon";
+import FileIcon from "../../icons/file.icon";
+import StarOutlinedIcon from "../../icons/star-outlined";
 import {
   ContentInfo,
   Instruction,
@@ -18,16 +21,19 @@ export default function QuizDetailsPage() {
         <ContentInfo>
           <SectionHeader>Brief explanation about this quiz</SectionHeader>
           <ListItemComponent
-            title={"test test"}
-            description={"sub test test"}
+            leadingIcon={<FileIcon />}
+            title={"10 Question"}
+            description={"10 point for a correct answer"}
           />
           <ListItemComponent
-            title={"test test"}
-            description={"sub test test"}
+            leadingIcon={<ClockIcon />}
+            title={"1 hour 15 min"}
+            description={"Total duration of the quiz"}
           />
           <ListItemComponent
-            title={"test test"}
-            description={"sub test test"}
+            leadingIcon={<StarOutlinedIcon />}
+            title={"Win 10 star"}
+            description={"Answer all questions correctly"}
           />
         </ContentInfo>
         <ContentInfo>
