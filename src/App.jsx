@@ -1,12 +1,12 @@
 import { Container } from "./App.styles";
 import AppLayout from "./layouts/app/app.layout";
-import QuizDetailsPage from "./pages/quiz-details/quiz-details.page";
+import QuizPage from "./pages/quiz/quiz.page";
 
 function App() {
   return (
     <Container>
       <AppLayout>
-        <QuizDetailsPage />
+        <QuizPage />
       </AppLayout>
     </Container>
   );

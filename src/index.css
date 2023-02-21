@@ -63,12 +63,13 @@ h6 {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
+  height: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /* Handle */

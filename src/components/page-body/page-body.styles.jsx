@@ -1,11 +1,13 @@
 import { styled } from "@stitches/react";
 
 export const Container = styled("div", {
+  position: "relative",
   height: "100%",
   borderTopLeftRadius: 32,
   borderTopRightRadius: 32,
   backgroundColor: "var(--color-white)",
   paddingTop: 16,
+  paddingBottom: 100,
   display: "flex",
   flexDirection: "column",
 });
@@ -23,5 +25,5 @@ export const ChildrenContainer = styled("div", {
   flex: "1 1 auto",
   overflowY: "auto",
   height: 0,
-  padding: "0px 24px",
+  margin: "0px 24px",
 });

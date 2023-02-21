@@ -11,7 +11,7 @@ export const Container = styled("div", {
   variants: {
     color: {
       primary: {
-        backgroundColor:
+        background:
           "linear-gradient(122.76deg, #3550DC -35.72%, #27E9F7 172.73%)",
       },
       gray: {
@@ -19,6 +19,21 @@ export const Container = styled("div", {
       },
       black: {
         backgroundColor: "var(--color-black)",
+      },
+    },
+
+    size: {
+      sm: {
+        height: 32,
+        width: 32,
+      },
+      md: {
+        height: 40,
+        width: 40,
+      },
+      lg: {
+        height: 50,
+        width: 50,
       },
     },
   },
