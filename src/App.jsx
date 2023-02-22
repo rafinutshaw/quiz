@@ -40,7 +40,7 @@ function App() {
       : [
           {
             path: "/",
-            element: <LoginPage onClick={() => loginWithRedirect()} />,
+            element: <LoginPage />,
           },
         ]
   );

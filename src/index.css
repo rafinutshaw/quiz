@@ -1,3 +1,85 @@
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./fonts/nunito/Nunito-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./fonts/nunito/Nunito-ExtraLight.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/nunito/Nunito-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./fonts/nunito/Nunito-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/nunito/Nunito-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./fonts/nunito/Nunito-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/nunito/Nunito-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"),
+    url(./fonts/ubuntu/Ubuntu-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"), url(./fonts/ubuntu/Ubuntu-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"), url(./fonts/ubuntu/Ubuntu-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: local("Ubuntu"),
+    url(./fonts/dmsans/DMSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */

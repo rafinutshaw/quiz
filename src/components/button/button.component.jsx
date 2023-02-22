@@ -6,9 +6,15 @@ export default function ButtonComponent({
   type,
   size = "md",
   onClick,
+  isDisabled = false,
 }) {
   return (
-    <ButtonElement onClick={onClick} type={type} size={size}>
+    <ButtonElement
+      onClick={onClick}
+      type={type}
+      size={size}
+      disabled={isDisabled}
+    >
       {children}
     </ButtonElement>
   );

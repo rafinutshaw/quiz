@@ -17,7 +17,7 @@ export default function AppbarComponent() {
   let location = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { logout } = useAuth0();
+  const { logout, user } = useAuth0();
 
   const handleClick = () => {
     navigate("/");
