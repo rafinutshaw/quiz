@@ -2,8 +2,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import React from "react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
-  const domain = "frontpayment.us.auth0.com";
-  const clientId = "i3lsXE0lC0fr0Cdy8LegKx2Q0vHzlqHL";
+  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
   return (
     <Auth0Provider
