@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { QuizProvider } from './app-context/quiz-context';
+import Auth0ProviderWithHistory from './auth0-provider';
 import './global.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -9,9 +10,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <QuizProvider>
-      <App />
-    </QuizProvider>
+    <Auth0ProviderWithHistory>
+      <QuizProvider>
+        <App />
+      </QuizProvider>
+    </Auth0ProviderWithHistory>
   </React.StrictMode>
 );
 

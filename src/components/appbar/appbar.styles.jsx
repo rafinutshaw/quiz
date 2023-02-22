@@ -24,3 +24,7 @@ export const TitleContainer = styled("div", {
   lineHeight: "21px",
   color: "var(--color-white)",
 });
+
+export const Logout = styled("div", {
+  cursor: "pointer",
+});

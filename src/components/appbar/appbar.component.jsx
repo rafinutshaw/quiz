@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeftArrowIcon from "../../icons/left-arrow.icon";
@@ -7,6 +8,7 @@ import TimerComponent from "../timer/timer.component";
 import {
   Container,
   IconContainer,
+  Logout,
   PageInfo,
   TitleContainer,
 } from "./appbar.styles";
@@ -15,6 +17,7 @@ export default function AppbarComponent() {
   let location = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { logout } = useAuth0();
 
   const handleClick = () => {
     navigate("/");
@@ -34,7 +37,11 @@ export default function AppbarComponent() {
           <TitleContainer>{searchParams.get("title")}</TitleContainer>
         )}
       </PageInfo>
-      {location.pathname !== "/quiz" && <ProfileComponent />}
+      {location.pathname !== "/quiz" && (
+        <Logout onClick={logout}>
+          <ProfileComponent />
+        </Logout>
+      )}
       {location.pathname === "/quiz" && (
         <TimerComponent
           duration={1000}
