@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import ButtonComponent from "../../components/button/button.component";
 import PageBodyComponent from "../../components/page-body/page-body.component";
 import PageContentComponent from "../../components/page-content/page-content.component";
@@ -10,13 +11,19 @@ import { PaginatorWrapper, Space } from "./quiz.styles";
 
 export default function QuizPage() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const methods = useForm({});
+  const { handleSubmit, values } = methods;
+  console.log(values);
   const getTabs = () => {
-    return questions.map((item) => {
+    return questions.map((item, index) => {
       return {
         label: item.id,
         content: (
-          <QuestionComponent question={item.question} options={item.answers} />
+          <QuestionComponent
+            question={item.question}
+            options={item.answers}
+            id={item.id}
+          />
         ),
       };
     });
@@ -26,21 +33,25 @@ export default function QuizPage() {
     <PageContentComponent>
       <Space />
       <PageBodyComponent>
-        <TabsComponent
-          type="regular"
-          tabs={getTabs()}
-          activeIndex={activeIndex}
-          onTabChange={setActiveIndex}
-        ></TabsComponent>
-        <PaginatorWrapper>
-          <PaginatorComponent
-            totalPages={questions.length}
-            currentPage={activeIndex}
-            onChange={(page) => setActiveIndex(page)}
-          >
-            <ButtonComponent type={"outlined"}>Submit</ButtonComponent>
-          </PaginatorComponent>
-        </PaginatorWrapper>
+        <FormProvider {...methods}>
+          <form onSubmit={handleSubmit(console.log)}>
+            <TabsComponent
+              type="regular"
+              tabs={getTabs()}
+              activeIndex={activeIndex}
+              onTabChange={setActiveIndex}
+            ></TabsComponent>
+            <PaginatorWrapper>
+              <PaginatorComponent
+                totalPages={questions.length}
+                currentPage={activeIndex}
+                onChange={(page) => setActiveIndex(page)}
+              >
+                <ButtonComponent type={"outlined"}>Submit</ButtonComponent>
+              </PaginatorComponent>
+            </PaginatorWrapper>
+          </form>
+        </FormProvider>
       </PageBodyComponent>
     </PageContentComponent>
   );

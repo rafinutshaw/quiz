@@ -10,17 +10,41 @@ export const QuestionLabel = styled("div", {
   marginBottom: 27,
 });
 
-export const OptionContainer = styled("div", {
+export const Label = styled("label", {
   display: "flex",
   alignItems: "center",
   gap: 8,
 });
 
+export const OptionContainer = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: 8,
+
+  input: {
+    visibility: "hidden",
+    position: "absolute",
+  },
+  "input + label > div": {
+    cursor: "pointer",
+  },
+});
+
 export const OptionLabel = styled("div", {
   fontFamily: "Ubuntu",
-  fontWeight: 400,
   fontSize: 14,
   lineHeight: "16px",
+
+  variants: {
+    selected: {
+      true: {
+        background:
+          "linear-gradient(122.76deg, #3550DC -35.72%, #27E9F7 172.73%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      },
+    },
+  },
 });
 
 export const OptionsWrapper = styled("div", {

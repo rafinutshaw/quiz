@@ -29,9 +29,7 @@ function App() {
 
   return (
     <Container>
-      {/* <AppLayout> */}
       <RouterProvider router={router} />
-      {/* </AppLayout> */}
     </Container>
   );
 }
