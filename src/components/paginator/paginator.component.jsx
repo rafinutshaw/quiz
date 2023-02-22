@@ -16,6 +16,7 @@ export default function PaginatorComponent({
   return (
     <Container>
       <ActionButton
+        type="button"
         disabled={currentPage === 0}
         onClick={() => onAction(currentPage - 1)}
       >
@@ -28,6 +29,7 @@ export default function PaginatorComponent({
       </ActionButton>
       {children}
       <ActionButton
+        type="button"
         disabled={currentPage + 1 === totalPages}
         onClick={() => onAction(currentPage + 1)}
       >

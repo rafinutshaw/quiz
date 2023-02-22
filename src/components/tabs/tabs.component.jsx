@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PointComponent from "../point/point.component";
 import {
   ContentWrapper,
@@ -15,21 +15,9 @@ export default function TabsComponent({
   onTabChange,
   type = "compact",
 }) {
-  const scrollLabelToView = (elementID) => {
-    const element = document.getElementById(elementID);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const onLabelClick = (elementID, index) => {
-    scrollLabelToView(elementID);
+  const onLabelClick = (index) => {
     onTabChange(index);
   };
-
-  useEffect(() => {
-    scrollLabelToView(`${tabs[activeIndex].label}${activeIndex}`);
-  }, [tabs, activeIndex]);
 
   const getLabel = (isActive, label) => {
     if (type === "compact") {
@@ -58,19 +46,11 @@ export default function TabsComponent({
         {tabs.map((item, index) => {
           return (
             <LabelContainer
+              key={item.label}
               id={`${item.label}${index}`}
               onClick={() => onLabelClick(`${item.label}${index}`, index)}
             >
               {getLabel(index === activeIndex, item.label)}
-              {/* <PointContainer active={index === activeIndex}>
-                <PointComponent
-                  color={index === activeIndex ? "primary" : "gray"}
-                  size="sm"
-                >
-                  {item.label}
-                </PointComponent>
-              </PointContainer>
-              <Divider active={index === activeIndex} /> */}
             </LabelContainer>
           );
         })}
@@ -78,6 +58,7 @@ export default function TabsComponent({
       {tabs.map((item, index) => {
         return (
           <ContentWrapper
+            key={item.label}
             compact={type === "compact"}
             active={index === activeIndex}
           >

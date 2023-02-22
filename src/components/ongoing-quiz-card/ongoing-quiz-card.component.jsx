@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ClockIcon from "../../icons/clock.icon";
 import FileIcon from "../../icons/file.icon";
 import TrashIcon from "../../icons/trash.icon";
@@ -15,7 +15,7 @@ import {
   Title,
 } from "./ongoing-quiz-card.styles";
 
-export default function OngoingQuizCardComponent() {
+export default function OngoingQuizCardComponent({ onSelect, title }) {
   const navigate = useNavigate();
 
   return (
@@ -24,7 +24,9 @@ export default function OngoingQuizCardComponent() {
       <RightContent>
         <InfoWrapper>
           <InfoContainer>
-            <Title>UI UX Design</Title>
+            <Link to={`/quiz-details?title=${title}`}>
+              <Title>{title}</Title>
+            </Link>
             <InfoItem>
               <FileIcon size={16} />
               10 Questions
@@ -38,7 +40,10 @@ export default function OngoingQuizCardComponent() {
           </DeleteAction>
         </InfoWrapper>
         <ButtonComponent
-          onClick={() => navigate("/quiz")}
+          onClick={() => {
+            onSelect(title);
+            navigate(`/quiz?title=${title}`);
+          }}
           type={"dark"}
           size={"sm"}
         >

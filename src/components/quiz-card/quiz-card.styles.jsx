@@ -42,6 +42,7 @@ export const ImageContainer = styled("div", {
 
 export const InfoContainer = styled("div", {
   flexGrow: 1,
+  zIndex: 10,
 });
 
 export const Title = styled("div", {

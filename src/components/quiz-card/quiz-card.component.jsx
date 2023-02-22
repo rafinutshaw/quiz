@@ -12,13 +12,17 @@ import {
   Title,
 } from "./quiz-card.styles";
 
-export default function QuizCardComponent({ isActive = false }) {
+export default function QuizCardComponent({
+  isActive = false,
+  onSelect,
+  title,
+}) {
   return (
-    <Container active={isActive}>
+    <Container active={isActive} onClick={() => onSelect(title)}>
       <ImageContainer />
       <InfoContainer>
-        <Link to={"/quiz-details"}>
-          <Title>UI UX Design</Title>
+        <Link to={`/quiz-details?title=${title}`}>
+          <Title>{title}</Title>
         </Link>
         <InfoItem>
           <FileIcon size={16} />

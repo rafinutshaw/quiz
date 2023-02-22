@@ -1,4 +1,5 @@
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 import StarGoldenIcon from "../../icons/star-golden.icon";
 import {
   Container,
@@ -10,14 +11,15 @@ import {
 } from "./quiz-header.styles";
 
 export default function QuizHeaderComponent({
-  title = "UI UX Design Quiz",
   description = "Get 100 Points",
   rating = 4.8,
 }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <Container>
       <LeftPanel>
-        <Title>{title}</Title>
+        <Title>{searchParams.get("title")}</Title>
         <Description>{description}</Description>
       </LeftPanel>
       <RightPanel>
