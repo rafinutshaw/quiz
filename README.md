@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+To get Started first update your .env file with the following code
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+REACT_APP_AUTH0_DOMAIN=frontpayment.us.auth0.com
+REACT_APP_AUTH0_CLIENT_ID=i3lsXE0lC0fr0Cdy8LegKx2Q0vHzlqHL
+
+after that you can run "npm start" to run the app.
 
 ## Available Scripts
 
