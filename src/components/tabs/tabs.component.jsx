@@ -30,7 +30,7 @@ export default function TabsComponent({
     }
     return (
       <>
-        <PointContainer active={isActive}>
+        <PointContainer>
           <PointComponent color={isActive ? "primary" : "gray"} size="sm">
             {label}
           </PointComponent>
@@ -47,8 +47,8 @@ export default function TabsComponent({
           return (
             <LabelContainer
               key={item.label}
-              id={`${item.label}${index}`}
-              onClick={() => onLabelClick(`${item.label}${index}`, index)}
+              id={`${item.label}`}
+              onClick={() => onLabelClick(index)}
             >
               {getLabel(index === activeIndex, item.label)}
             </LabelContainer>

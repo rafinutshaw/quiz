@@ -14,7 +14,7 @@ export default function QuizHeaderComponent({
   description = "Get 100 Points",
   rating = 4.8,
 }) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   return (
     <Container>

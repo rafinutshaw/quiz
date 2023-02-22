@@ -24,7 +24,7 @@ export default function TimerComponent({ duration, onFinished }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [count, onFinished]);
+  }, [count, onFinished, setTimeRemaining]);
 
   return (
     <PillComponent>

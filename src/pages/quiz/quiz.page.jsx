@@ -19,9 +19,7 @@ export default function QuizPage() {
   const quizContext = useContext(QuizContext);
   const { clearQuizInfo } = quizContext;
 
-  useEffect(() => {
-    clearQuizInfo();
-  }, []);
+  useEffect(clearQuizInfo, []);
 
   const getTabs = () => {
     return QUESTIONS.map((item) => {

@@ -14,10 +14,9 @@ import {
 export default function QuestionComponent({ question, options, id }) {
   const { register, watch } = useFormContext();
   const quizContext = useContext(QuizContext);
-  const { quizInfo, setQuizInfo } = quizContext;
+  const { setQuizInfo } = quizContext;
   const values = watch();
-  console.log(values);
-  console.log(quizInfo);
+
   useEffect(() => {
     setQuizInfo(values);
   }, [watch]);
@@ -27,7 +26,7 @@ export default function QuestionComponent({ question, options, id }) {
       <QuestionLabel>{question}</QuestionLabel>
       <OptionsWrapper>
         {options.map((item, index) => (
-          <OptionContainer>
+          <OptionContainer key={item.ans}>
             <input
               type="radio"
               value={item.ans}
@@ -41,7 +40,7 @@ export default function QuestionComponent({ question, options, id }) {
                 return register(id.toString()).onChange(e);
               }}
             />
-            <Label for={`${index}${question}`}>
+            <Label htmlFor={`${index}${question}`}>
               <PointComponent
                 color={values[id] === item.ans ? "primary" : "gray"}
               >

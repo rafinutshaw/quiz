@@ -14,12 +14,12 @@ import {
 export default function AppbarComponent() {
   let location = useLocation();
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const handleClick = () => {
     navigate("/");
   };
-  console.log(location.pathname);
+
   return (
     <Container>
       <PageInfo>
@@ -37,7 +37,7 @@ export default function AppbarComponent() {
       {location.pathname !== "/quiz" && <ProfileComponent />}
       {location.pathname === "/quiz" && (
         <TimerComponent
-          duration={10}
+          duration={1000}
           onFinished={() => navigate("/quiz-complete")}
         />
       )}

@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppbarContext } from "../../app-context/appbar-context";
 import ButtonComponent from "../../components/button/button.component";
 import HomeHeaderComponent from "../../components/home-header/home-header.component";
 import OngoingQuizCardComponent from "../../components/ongoing-quiz-card/ongoing-quiz-card.component";
@@ -17,7 +16,6 @@ import {
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedExam, setSelectedExam] = useState("");
-  const { setTitle } = useContext(AppbarContext);
   const navigate = useNavigate();
 
   const tabs = [
@@ -71,7 +69,6 @@ export default function HomePage() {
         <FloatingBottomButton>
           <ButtonComponent
             onClick={() => {
-              setTitle(selectedExam);
               navigate(`/quiz?title=${selectedExam}`);
             }}
             type={"primary"}
